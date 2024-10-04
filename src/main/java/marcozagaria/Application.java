@@ -15,21 +15,25 @@ public class Application {
         Collezione giochilist = new Collezione();
         giochilist.agiungiGioco(new Videogioco(1, 50, new Date(2024, 10, 11), "Dragon Ball Sparking 0", "xbox", 100, Genere.AZIONE));
         giochilist.agiungiGioco(new GiocoDaTavolo(2, 25.9, new Date(2020, 5, 17), "Munchkin", 5, 2));
+        giochilist.agiungiGioco(new Videogioco(3, 70, new Date(2023, 10, 11), "Fifa", "xbox", 200, Genere.SPORT));
+        giochilist.agiungiGioco(new GiocoDaTavolo(4, 35.9, new Date(2018, 5, 17), "MonopolY", 4, 3));
         System.out.println(giochilist);
 
-        System.out.println("inserisci un numero id");
-        int n = scanner.nextInt();
-        giochilist.ricercaId(n);
-        System.out.println("inserisci un prezzo per la ricerca");
-        double prezzo = scanner.nextDouble();
-        giochilist.ricercaPerPrezzo(prezzo);
-        System.out.println("con quanti giocatori vuoi che sia il tuo gioco?");
-        int numeroGiocatori = scanner.nextInt();
-        giochilist.ricercaPerGiocatori(numeroGiocatori);
-        System.out.println("inserisci l'id del gioco da eliminare");
-        int idDaEliminare = scanner.nextInt();
-        giochilist.rimuoviGioco(idDaEliminare);
+//        System.out.println("inserisci un numero id");
+//        int n = scanner.nextInt();
+//        giochilist.ricercaId(n);
+//        System.out.println("inserisci un prezzo per la ricerca");
+//        double prezzo = scanner.nextDouble();
+//        giochilist.ricercaPerPrezzo(prezzo);
+//        System.out.println("con quanti giocatori vuoi che sia il tuo gioco?");
+//        int numeroGiocatori = scanner.nextInt();
+//        giochilist.ricercaPerGiocatori(numeroGiocatori);
+//        System.out.println("inserisci l'id del gioco da eliminare");
+//        int idDaEliminare = scanner.nextInt();
+//        giochilist.rimuoviGioco(idDaEliminare);
         System.out.println("lista di giochi aggiornata " + giochilist);
+
+        giochilist.stampaStatistiche();
     }
 
 }

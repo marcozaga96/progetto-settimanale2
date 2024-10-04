@@ -1,6 +1,7 @@
 package marcozagaria.Classi;
 
 import java.util.ArrayList;
+import java.util.DoubleSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -71,6 +72,12 @@ public class Collezione {
         } else {
             throw new Exception("non esiste un gioco da eliminare con questo id " + idGioco);
         }
+    }
+
+    public void stampaStatistiche() {
+        DoubleSummaryStatistics statistics = giochilist.stream()
+                .mapToDouble(gioco -> gioco.getPrezzo()).summaryStatistics();
+        System.out.println(statistics);
     }
 
     @Override
