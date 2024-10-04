@@ -42,9 +42,23 @@ public class Collezione {
         if (giochiFiltrati.isEmpty()) {
             throw new Exception("nessun gioco con prezzo inferiore a " + prezzo);
         } else {
-            giochiFiltrati.forEach(gioco -> System.out.println("i giochi di prezzo inferiore a: " + prezzo + " sono: " + gioco));
+            giochiFiltrati.forEach(gioco -> System.out.println("i giochi di prezzo inferiore a " + prezzo + " sono: " + gioco));
             return giochiFiltrati;
         }
+    }
+
+    public List<GiocoDaTavolo> ricercaPerGiocatori(int giocatori) throws Exception {
+        List<GiocoDaTavolo> giochiFiltrati = giochilist.stream()
+                .filter(gioco -> gioco instanceof GiocoDaTavolo)
+                .map(gioco -> (GiocoDaTavolo) gioco)
+                .filter(gioco -> gioco.getNumeroGiocatori() == giocatori)
+                .collect(Collectors.toList());
+        if (giochiFiltrati.isEmpty()) {
+            throw new Exception("nessun gioco da tavolo trovato con " + giocatori + " giocatori.");
+        } else {
+            giochiFiltrati.forEach(gioco -> System.out.println("i giochi con " + giocatori + " giocatori sono: " + gioco));
+        }
+        return giochiFiltrati;
     }
 
     @Override

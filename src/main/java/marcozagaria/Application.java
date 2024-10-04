@@ -23,6 +23,9 @@ public class Application {
         System.out.println("inserisci un prezzo per la ricerca");
         double prezzo = scanner.nextDouble();
         giochilist.ricercaPerPrezzo(prezzo);
+        System.out.println("con quanti giocatori vuoi che sia il tuo gioco?");
+        int numeroGiocatori = scanner.nextInt();
+        giochilist.ricercaPerGiocatori(numeroGiocatori);
     }
 
 }
