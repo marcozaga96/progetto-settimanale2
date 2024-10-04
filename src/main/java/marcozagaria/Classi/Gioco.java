@@ -46,4 +46,14 @@ public abstract class Gioco {
     public void setPrezzo(double prezzo) {
         this.prezzo = prezzo;
     }
+
+    @Override
+    public String toString() {
+        return "Gioco{" +
+                "idGioco=" + idGioco +
+                ", titolo='" + titolo + '\'' +
+                ", annoPubblicazione=" + annoPubblicazione +
+                ", prezzo=" + prezzo +
+                '}';
+    }
 }
