@@ -10,12 +10,12 @@ public class Collezione {
         this.giochilist = new ArrayList<>();
     }
 
-    public List<Gioco> getGiochi() {
+    public List<Gioco> getGiochilist() {
         return giochilist;
     }
 
-    public void setGiochi(List<Gioco> giochi) {
-        this.giochilist = giochi;
+    public void setGiochilist(List<Gioco> giochilist) {
+        this.giochilist = giochilist;
     }
 
     public void agiungiGioco(Gioco gioco) throws Exception {
@@ -23,6 +23,16 @@ public class Collezione {
             throw new Exception("gioco con id " + gioco.getIdGioco() + " gia esistente");
         }
         giochilist.add(gioco);
+    }
+
+    public Gioco ricercaId(int idGioco) throws Exception {
+        for (Gioco gioco : giochilist) {
+            if (gioco.getIdGioco() == idGioco) {
+                System.out.println("l'id " + idGioco + " corrisponde a: " + gioco);
+                return gioco;
+            }
+        }
+        throw new Exception("gioco con id " + idGioco + " non trovato.");
     }
 
     @Override
