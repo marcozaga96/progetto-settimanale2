@@ -26,6 +26,10 @@ public class Application {
         System.out.println("con quanti giocatori vuoi che sia il tuo gioco?");
         int numeroGiocatori = scanner.nextInt();
         giochilist.ricercaPerGiocatori(numeroGiocatori);
+        System.out.println("inserisci l'id del gioco da eliminare");
+        int idDaEliminare = scanner.nextInt();
+        giochilist.rimuoviGioco(idDaEliminare);
+        System.out.println("lista di giochi aggiornata " + giochilist);
     }
 
 }

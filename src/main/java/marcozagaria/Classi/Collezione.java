@@ -61,6 +61,18 @@ public class Collezione {
         return giochiFiltrati;
     }
 
+    public void rimuoviGioco(int idGioco) throws Exception {
+        List<Gioco> giochiDaEliminare = giochilist.stream()
+                .filter(gioco -> gioco.getIdGioco() == idGioco)
+                .collect(Collectors.toList());
+        if (!giochiDaEliminare.isEmpty()) {
+            giochilist.removeAll(giochiDaEliminare);
+            System.out.println("gioco con id " + idGioco + " eliminato");
+        } else {
+            throw new Exception("non esiste un gioco da eliminare con questo id " + idGioco);
+        }
+    }
+
     @Override
     public String toString() {
         return "Collezione{" +
