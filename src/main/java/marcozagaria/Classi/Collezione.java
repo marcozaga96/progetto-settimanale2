@@ -2,6 +2,7 @@ package marcozagaria.Classi;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Collezione {
     protected List<Gioco> giochilist;
@@ -33,6 +34,17 @@ public class Collezione {
             }
         }
         throw new Exception("gioco con id " + idGioco + " non trovato.");
+    }
+
+    public List<Gioco> ricercaPerPrezzo(double prezzo) throws Exception {
+        List<Gioco> giochiFiltrati = giochilist.stream()
+                .filter(gioco -> gioco.getPrezzo() < prezzo).collect(Collectors.toList());
+        if (giochiFiltrati.isEmpty()) {
+            throw new Exception("nessun gioco con prezzo inferiore a " + prezzo);
+        } else {
+            giochiFiltrati.forEach(gioco -> System.out.println("i giochi di prezzo inferiore a: " + prezzo + " sono: " + gioco));
+            return giochiFiltrati;
+        }
     }
 
     @Override

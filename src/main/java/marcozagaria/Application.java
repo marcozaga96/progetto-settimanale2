@@ -20,6 +20,9 @@ public class Application {
         System.out.println("inserisci un numero id");
         int n = scanner.nextInt();
         giochilist.ricercaId(n);
+        System.out.println("inserisci un prezzo per la ricerca");
+        double prezzo = scanner.nextDouble();
+        giochilist.ricercaPerPrezzo(prezzo);
     }
 
 }
